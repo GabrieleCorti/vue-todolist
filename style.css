@@ -20,6 +20,7 @@ ul {
     text-align: center;
     padding: 20px 0;
     background-color: #35495E;
+    position: relative;
 }
 span{
     margin: 0 7px;
@@ -37,16 +38,16 @@ span.close:hover{
 
 @keyframes shake {
   0% { transform: translateX(1px) rotate(0deg); }
-  10% { transform: translateX(-1px) rotate(-1deg); }
-  20% { transform: translateX(-3px) rotate(1deg); }
-  30% { transform: translateX(3px) rotate(0deg); }
+  10% { transform: translateX(-0px) rotate(-1deg); }
+  20% { transform: translateX(-1px) rotate(1deg); }
+  30% { transform: translateX(0px) rotate(0deg); }
   40% { transform: translateX(1px) rotate(1deg); }
-  50% { transform: translateX(-1px) rotate(-1deg); }
-  60% { transform: translateX(-3px) rotate(0deg); }
-  70% { transform: translateX(3px) rotate(-1deg); }
-  80% { transform: translateX(-1px) rotate(1deg); }
-  90% { transform: translateX(1px) rotate(0deg); }
-  100% { transform: translateX(1px) rotate(-1deg); }
+  50% { transform: translateX(0px) rotate(-1deg); }
+  60% { transform: translateX(-1px) rotate(0deg); }
+  70% { transform: translateX(-0px) rotate(-1deg); }
+  80% { transform: translateX(1px) rotate(1deg); }
+  90% { transform: translateX(-1px) rotate(0deg); }
+  100% { transform: translateX(0px) rotate(-1deg); }
 }
 
 .wrap {
@@ -73,6 +74,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    transform: translate(0);
 }
 
 .new_item {
@@ -98,4 +101,13 @@ button{
     text-transform: capitalize;
     box-shadow: none;
     cursor: pointer;
+}
+
+.addRemove-enter, .addRemove-leave-to {
+    transform: translateX(-200px);
+    opacity: 0;
+}
+
+.addRemove-enter-active, .addRemove-leave-active {
+    transition: all 0.6s;
 }

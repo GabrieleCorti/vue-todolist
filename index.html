@@ -19,9 +19,12 @@
     <div id="root">
         <div class="wrap">
             <h1>VueToDo</h1>
-            <ul v-if="list.length > 0">
+            <!-- <ul v-if="list.length > 0">
                 <li v-for="(item, index) in list"><span>{{item}}</span><span v-on:click="cancel(index)" class="close"><i class="fas fa-backspace"></i></span> </li>
-            </ul>
+            </ul> -->
+            <transition-group name="addRemove" tag="ul" v-if="list.length > 0">
+                <li v-for="(item, index) in list" v-bind:key="item"><span>{{item}}</span><span v-on:click="cancel(index)" class="close"><i class="fas fa-backspace"></i></span> </li>
+            </transition-group>
             <div class="new_item">
                 <input v-model="toDo" v-on:keyup.enter="addToDo" type="text">
                 <button type="button" v-on:click="addToDo">aggiungi</button>
